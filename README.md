@@ -1,2 +1,2 @@
 # group_api
-school assignmen | api practice
+school assignment | api practice

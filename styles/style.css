@@ -8,6 +8,7 @@
     --font-color: #2B61AB;
     --translucent-white: rgba(255,255,255,0.46);
     --border-radius: 20px;
+    --margin: 1rem;
 }
 
 body {
@@ -60,10 +61,16 @@ main {
     border-radius: var(--border-radius);
     border: 1px solid white;
     max-height: 90vh;
+    overflow: scroll;
   }
 
   .user-img{
     height: 100px;
     width: 100px;
     border-radius: 50%;
+  }
+
+  .comment{
+    font-style: italic;
+    padding-top: var(--margin);
   }

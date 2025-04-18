@@ -14,13 +14,12 @@ function addTodos(todoArray) { //Adds users todo to the container with extra inf
     todoContainer.append(todoHeading);
 
     todoArray.forEach((todo) => { //Looping through all of the todo-s, creating DOM-elements for them
-        const todoText = document.createElement("p");
+        const todoTitle = document.createElement("h3");
         const todoCompleted = document.createElement("i");
-        todoText.innerText = todo.title;
+        todoTitle.innerText = todo.title;
         todoCompleted.classList.add("fa-solid");
-        todoCompleted.classList.add(todo.completed === true ? "fa-check" : "fa-xmark"); //✔️ if completed, ✖️ if not
-
-        todoContainer.append(todoText, todoCompleted);
+        todoCompleted.classList.add(todo.completed ? "fa-check" : "fa-xmark"); //✔️ if completed, ✖️ if not
+        todoContainer.append(todoTitle, todoCompleted);
     })
     cardInformation.append(todoContainer);
 }
@@ -123,7 +122,7 @@ async function userData() {
                     console.log("todos: ", todos);
 
                     clearInfoBox(); //clearing the info box from previous information
-                    addTodos(posts); //calls function that adds all of this users posts to the assigned container
+                    addTodos(todos); //calls function that adds all of this users posts to the assigned container
                     addPosts(posts, 3); //calls function that add posts, amount of comments shown as argument
 
                     

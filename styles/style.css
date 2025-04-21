@@ -41,7 +41,15 @@ main {
     overflow-y: scroll;
     max-height: 95vh;
     padding-bottom: 5vh;
+
+    /* Disable display on scrollbar */
+    -ms-overflow-style: none; /* Works for IE & Edge */
+    scrollbar-width: none; /* Works for Firefox */
 }
+.card-container::-webkit-scrollbar { /* Works for webkit browsers (Chrome, Safari and Opera) */
+    display: none;
+}
+
 
 .card {
     background-color: var(--translucent-white);

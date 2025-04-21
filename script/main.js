@@ -23,7 +23,7 @@ function addTodos(todoArray) { //Adds users todo to the container with extra inf
     })
     cardInformation.append(todoContainer);
 }
- 
+
 async function addPosts(postArray, amtComments) {
     const postContainer = document.createElement("section");
     const cardInformation = document.querySelector(".card-information");
@@ -77,7 +77,7 @@ async function userData() {
 
         console.log(userData);
 
-        for (const user of userData){  /* Lägger till bild, grundinformationen, knapp och en tom div i html-strängen för varje användare.  */
+        for (const user of userData){  // Adds Image, basic user info, a button and empty div to the HTML string for each user 
             userContainer.innerHTML +=`
             <div class="card">
                 <img src="./images/avatars/${user.id}.jpeg" alt="User Image" class="user-img">
@@ -94,12 +94,12 @@ async function userData() {
 
         const allButtons = document.querySelectorAll('.show-btn');
 
-        /* Här hämtas resterande data vid klick på knapp */
+        // Remaining data is fetched when the button is clicked 
         allButtons.forEach(button => {
             button.addEventListener('click', async() =>{
-                const userCard = button.closest('.card'); /* Hittar närmsta parent med klassen card*/
-                const moreInfo = userCard.querySelector('.more-info'); /* Hämtar diven med klassen more-info som ligger inuti card-klassen */
-                const userId = button.dataset.userid;  /* Hämtar användarens ID från knappen via (data-userid) */
+                const userCard = button.closest('.card'); // Finds the closest parent with class 'card' 
+                const moreInfo = userCard.querySelector('.more-info'); // Finds the 'more-info' div inside the card 
+                const userId = button.dataset.userid;  // Gets the user ID from the buttons data-userid attribute 
 
                 try{
                     const [postsRes, todosRes] = await Promise.all([

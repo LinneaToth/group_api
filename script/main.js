@@ -33,25 +33,39 @@ async function addPosts(postArray, amtComments) {
 
     postArray.forEach(async (post) => {
         const postCard = document.createElement("article");
+        postCard.classList.add("post-card");
         const postHeading = document.createElement("h3");
         postHeading.innerText = post.title;
         const postContent = document.createElement("p");
         postContent.innerText = post.body;
-        postCard.append(postHeading, postContent);
+        postCard.append(postHeading, postContent); //adds heading and the content of the post to the article
 
-
-        const commentCard = document.createElement("article");
+        const commentCard = document.createElement("article"); //contains all of the comments for each post
+        commentCard.classList.add("hidden", "comment-card");
         let comments = await getPostComments(post.id);
         comments = comments.slice(0, amtComments); //specifies the amount of comments shown
         console.log(comments);
 
-        comments.forEach((comment) => {
+        const commentsBtn = document.createElement("button"); //Button toggling visibility of comments for each post
+        commentsBtn.innerText = "Show comments";
+        commentsBtn.addEventListener("click", () => {
+            commentCard.classList.toggle("hidden");
+
+            if (commentsBtn.innerText === "Show comments") { //Changes inner text on button, depending on what happens when it is clicked
+                commentsBtn.innerText = "Hide comments";
+            } else {
+                commentsBtn.innerText = "Show comments"
+            }
+        })
+
+        comments.forEach((comment) => { //adds each comment to the page
             const commentBody = document.createElement("p");
             commentBody.innerText = comment.body;
             commentBody.classList.add("comment");
             commentCard.append(commentBody);
         })
-        postCard.append(commentCard);        
+
+        postCard.append(commentsBtn, commentCard);        
         postContainer.append(postCard);
     })
 

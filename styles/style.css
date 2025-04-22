@@ -58,7 +58,7 @@ main {
     gap: 15px;
     overflow-y: scroll;
     max-height: 85vh;
-    /* padding-bottom: 5vh; */
+    padding-bottom: 35px;
 
     /* Disable display on scrollbar */
     -ms-overflow-style: none; /* Works for IE & Edge */
@@ -83,11 +83,17 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 80vh;
+    /* Disable display on scrollbar */
+    -ms-overflow-style: none; /* Works for IE & Edge */
+    scrollbar-width: none; /* Works for Firefox */
 
     & h2{
         text-align: center;
         margin-bottom: var(--margin);
     }
+}
+.card-information::-webkit-scrollbar {
+    display:none;
 }
 
 /* BUTTONS STYLING */

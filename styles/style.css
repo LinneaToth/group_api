@@ -77,13 +77,12 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     margin-bottom: 5vh;
-}
 
     & h2{
         text-align: center;
         margin-bottom: var(--margin);
     }
-  }
+}
 
 .user-img{
     height: 110px;

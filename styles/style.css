@@ -29,15 +29,15 @@ main {
     display:grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
-    gap: 10px;
-    padding: 10px;
+    gap: 35px;
+    padding: 35px;
 }
 
 /*CARDS*/
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
     overflow-y: scroll;
     max-height: 95vh;
     padding-bottom: 5vh;
@@ -53,7 +53,7 @@ main {
 
 .card {
     background-color: var(--translucent-white);
-    padding: 20px;
+    padding: 30px 10px;
     border-radius: var(--border-radius);
     border: 1px solid white;
     text-align: center;
@@ -69,20 +69,60 @@ main {
     border-radius: var(--border-radius);
     border: 1px solid white;
     max-height: 90vh;
-    overflow: scroll;
-  }
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 5vh;
+}
 
-  .user-img{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-  }
+.user-img{
+    height: 110px;
+    width: 110px;
+    clip-path: circle(45%);
+}
 
-  .comment{
+.comment{
     font-style: italic;
     padding-top: var(--margin);
-  }
+}
 
-  .hidden{
+.hidden{
     display: none; 
-  }
+}
+
+
+
+/* ---------------------------------Responsive Layout--------------------------------- */
+
+@media(max-width: 1000px){
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+}
+
+
+@media(max-width: 500px){
+
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-information {
+        display: flex;
+        z-index: 1;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: auto;
+
+    }
+
+}

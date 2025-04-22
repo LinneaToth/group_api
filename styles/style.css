@@ -58,7 +58,7 @@ main {
     gap: 15px;
     overflow-y: scroll;
     max-height: 85vh;
-    padding-bottom: 35px;
+    padding-bottom: 5vh;
 
     /* Disable display on scrollbar */
     -ms-overflow-style: none; /* Works for IE & Edge */
@@ -74,6 +74,7 @@ main {
     border-radius: var(--border-radius);
     border: 1px solid white;
     text-align: center;
+    line-height: 1.5;
 }
 
 .card-information {
@@ -97,13 +98,14 @@ main {
     text-align: center;
     margin-bottom: var(--margin);
 }
-  
+
 /* BUTTONS STYLING */
 .btn-posts{
     margin-top: 0.7rem;
 }
 
 button{
+    font-family: "Plus Jakarta Sans", sans-serif;
     padding: 0.6rem 1rem;
     margin: 0.3rem;
     width: 10rem;

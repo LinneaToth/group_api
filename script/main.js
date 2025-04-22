@@ -6,11 +6,11 @@ function clearInfoBox() { //clearing the container with extra info
     cardInformation.innerHTML = "";
 }
 
-function addTodos(todoArray) { //Adds users todo to the container with extra info 
+function addTodos(todoArray, name) { //Adds users todo to the container with extra info 
     const todoContainer = document.createElement("section");
     const cardInformation = document.querySelector(".card-information");
     const todoHeading = document.createElement("h2");
-    todoHeading.innerText = "To-do's"; //HÄR SKULLE VI KUNNA UTVECKLA FUNKTIONEN SÅ DEN SKRIVER TEX MRS DENNIS' TODOS
+    todoHeading.innerText = `${username.toUpperCase()}'S TO-DO'S`; //HÄR SKULLE VI KUNNA UTVECKLA FUNKTIONEN SÅ DEN SKRIVER TEX MRS DENNIS' TODOS
     todoContainer.append(todoHeading);
 
     todoArray.forEach((todo) => { //Looping through all of the todo-s, creating DOM-elements for them
@@ -24,11 +24,11 @@ function addTodos(todoArray) { //Adds users todo to the container with extra inf
     cardInformation.append(todoContainer);
 }
 
-async function addPosts(postArray, amtComments) {
+async function addPosts(postArray, amtComments, name) {
     const postContainer = document.createElement("section");
     const cardInformation = document.querySelector(".card-information");
     const postHeading = document.createElement("h2");
-    postHeading.innerText = "Posts"; //HÄR SKULLE VI KUNNA UTVECKLA FUNKTIONEN SÅ DEN SKRIVER TEX MRS DENNIS' POSTS
+    postHeading.innerText = `${username.toUpperCase()}'S POSTS`; //HÄR SKULLE VI KUNNA UTVECKLA FUNKTIONEN SÅ DEN SKRIVER TEX MRS DENNIS' POSTS
     postContainer.append(postHeading);
 
     postArray.forEach(async (post) => {
@@ -101,6 +101,9 @@ async function userData() {
                 const moreInfo = userCard.querySelector('.more-info'); // Finds the 'more-info' div inside the card 
                 const userId = button.dataset.userid;  // Gets the user ID from the buttons data-userid attribute 
 
+                //Get the user's name from the card heading
+                const name = userCard.querySelector("h2").innerText;
+
                 try{
                     const [postsRes, todosRes] = await Promise.all([
                         fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`),
@@ -122,8 +125,8 @@ async function userData() {
                     console.log("todos: ", todos);
 
                     clearInfoBox(); //clearing the info box from previous information
-                    addTodos(todos); //calls function that adds all of this users posts to the assigned container
-                    addPosts(posts, 3); //calls function that add posts, amount of comments shown as argument
+                    addTodos(todos, name); //calls function that adds all of this users posts to the assigned container
+                    addPosts(posts, 3, name); //calls function that add posts, amount of comments shown as argument
 
                     
                     /* 

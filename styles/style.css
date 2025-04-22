@@ -134,8 +134,31 @@ main {
 }
 
 /*POSTS*/
+.post-card{
+    margin-top: var(--margin);
+    background: var(--translucent-white);
+    border-radius: var(--border-radius);
+    align-items: center;
+    padding: var(--margin);
 
+    & h3{
+        margin-bottom: var(--margin);
+    }
 
+    & button{
+        margin-top: var(--margin);
+    }
+}
+
+.comment{
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--translucent-white);
+    border-radius: var(--border-radius);
+    margin-top: var(--margin);
+    padding: var(--margin);
+    margin-bottom: 0;
+}
 
 /* ---------------------------------Responsive Layout--------------------------------- */
 

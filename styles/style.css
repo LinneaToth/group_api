@@ -23,22 +23,33 @@ body {
     background-size: cover;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: var(--font-color);
-    overflow: hidden;
 }
 
+header {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.9);
+}
 
 main {
     display:grid;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
     gap: 35px;
-    padding: 35px;
+    padding: 0px 35px;
 }
-
 
 .hidden{
     display: none; 
-  }
+}
 
 /*USER CARDS*/
 .card-container {
@@ -46,8 +57,8 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     overflow-y: scroll;
-    max-height: 95vh;
-    padding-bottom: 5vh;
+    max-height: 85vh;
+    /* padding-bottom: 5vh; */
 
     /* Disable display on scrollbar */
     -ms-overflow-style: none; /* Works for IE & Edge */
@@ -73,10 +84,9 @@ main {
     padding: 30px;
     border-radius: var(--border-radius);
     border: 1px solid white;
-    max-height: 90vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-bottom: 5vh;
+    height: 80vh;
 
     & h2{
         text-align: center;
@@ -94,7 +104,6 @@ main {
     font-style: italic;
     padding-top: var(--margin);
 }
-
 
 .hidden{
     display: none; 
@@ -141,13 +150,17 @@ main {
 
 @media(max-width: 500px){
 
+    h1 {
+        font-size: 30px;
+    }
+
     main {
         display: flex;
         justify-content: center;
     }
 
     .card-information {
-        display: flex;
+        display: none;
         z-index: 1;
     }
 

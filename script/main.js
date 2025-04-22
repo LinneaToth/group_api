@@ -14,12 +14,15 @@ function addTodos(todoArray) { //Adds users todo to the container with extra inf
     todoContainer.append(todoHeading);
 
     todoArray.forEach((todo) => { //Looping through all of the todo-s, creating DOM-elements for them
-        const todoTitle = document.createElement("h3");
+        const todoItem = document.createElement("article");
+        todoItem.classList.add("todo-item");
+        const todoTitle = document.createElement("p");
         const todoCompleted = document.createElement("i");
         todoTitle.innerText = todo.title;
         todoCompleted.classList.add("fa-solid");
         todoCompleted.classList.add(todo.completed ? "fa-check" : "fa-xmark"); //✔️ if completed, ✖️ if not
-        todoContainer.append(todoTitle, todoCompleted);
+        todoItem.append(todoCompleted, todoTitle);
+        todoContainer.append(todoItem);
     })
     cardInformation.append(todoContainer);
 }

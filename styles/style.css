@@ -6,6 +6,8 @@
 
 :root{
     --font-color: #2B61AB;
+    --alert-red: #EE6A55;
+    --ok-green: #5B957C;
     --translucent-white: rgba(255,255,255,0.46);
     --border-radius: 20px;
     --margin: 1rem;
@@ -33,7 +35,12 @@ main {
     padding: 10px;
 }
 
-/*CARDS*/
+
+.hidden{
+    display: none; 
+  }
+
+/*USER CARDS*/
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -50,7 +57,6 @@ main {
     display: none;
 }
 
-
 .card {
     background-color: var(--translucent-white);
     padding: 20px;
@@ -62,7 +68,6 @@ main {
         width: 80%;
     }
 }
-
 .card-information {
     background-color: var(--translucent-white);
     padding: 30px;
@@ -70,6 +75,11 @@ main {
     border: 1px solid white;
     max-height: 90vh;
     overflow: scroll;
+
+    & h2{
+        text-align: center;
+        margin-bottom: var(--margin);
+    }
   }
 
   .user-img{
@@ -83,6 +93,29 @@ main {
     padding-top: var(--margin);
   }
 
-  .hidden{
-    display: none; 
-  }
+/*TO-DO*/
+
+.todo-item{
+    display: grid;
+    grid-template-columns: 3rem auto;
+    margin-top: var(--margin);
+    background: var(--translucent-white);
+    border-radius: var(--border-radius);
+    align-items: center;
+    padding: var(--margin);
+
+    & i, p{
+        margin-left: var(--margin);
+    }
+}
+
+.fa-xmark{
+    color: var(--alert-red);
+}
+
+.fa-check{
+    color: var(--ok-green);
+}
+
+/*POSTS*/
+

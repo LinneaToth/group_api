@@ -74,10 +74,6 @@ main {
     border-radius: var(--border-radius);
     border: 1px solid white;
     text-align: center;
-
-    & button{
-        width: 80%;
-    }
 }
 .card-information {
     background-color: var(--translucent-white);
@@ -92,6 +88,29 @@ main {
         text-align: center;
         margin-bottom: var(--margin);
     }
+}
+
+/* BUTTONS STYLING */
+.btn-posts{
+    margin-top: 0.7rem;
+}
+
+button{
+    padding: 0.6rem 1rem;
+    margin: 0.3rem;
+    width: 10rem;
+    border-radius: 20px;
+    background-image: radial-gradient(100% 100% at 100% 0, #98dff3 0, #2940f3 100%);
+    border: none;
+    cursor: pointer;
+    color: white;
+    letter-spacing: 1px;
+    filter: brightness(1.06);
+    transition: box-shadow 0.3s ease-in;
+}
+
+button:hover{
+    box-shadow: 0 2px 5px rgba(1, 8, 26, 0.596);
 }
 
 .user-img{

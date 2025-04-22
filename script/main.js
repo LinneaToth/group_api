@@ -50,6 +50,7 @@ async function addPosts(postArray, amtComments) {
         console.log(comments);
 
         const commentsBtn = document.createElement("button"); //Button toggling visibility of comments for each post
+        commentsBtn.classList.add('btn-comments')
         commentsBtn.innerText = "Show comments";
         commentsBtn.addEventListener("click", () => {
             commentCard.classList.toggle("hidden");

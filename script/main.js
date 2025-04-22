@@ -16,7 +16,7 @@ function addTodos(todoArray) { //Adds users todo to the container with extra inf
     todoArray.forEach((todo) => { //Looping through all of the todo-s, creating DOM-elements for them
         const todoItem = document.createElement("article");
         todoItem.classList.add("todo-item");
-        const todoTitle = document.createElement("h3");
+        const todoTitle = document.createElement("p");
         const todoCompleted = document.createElement("i");
         todoTitle.innerText = todo.title;
         todoCompleted.classList.add("fa-solid");

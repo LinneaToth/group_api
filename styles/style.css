@@ -104,12 +104,7 @@ main {
     align-items: center;
     padding: var(--margin);
 
-    & h3{
-        font-size: 1rem;
-        margin-left: var(--margin);
-    }
-
-    & i{
+    & i, p{
         margin-left: var(--margin);
     }
 }
@@ -121,3 +116,6 @@ main {
 .fa-check{
     color: var(--ok-green);
 }
+
+/*POSTS*/
+

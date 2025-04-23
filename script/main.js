@@ -82,6 +82,15 @@ async function getPostComments(postID) {
     return comments;
 }
 
+
+const closeBtn = document.querySelector("#closeBtn");
+
+closeBtn.addEventListener("click", () =>{
+    const infobox = document.querySelector(".card-information");
+    infobox.classList.remove("show-info");
+    closeBtn.classList.add("hidden");
+})
+
 // Main function to fetch and display user data
 async function userData() {
     const userContainer = document.querySelector('.card-container');
@@ -113,6 +122,8 @@ async function userData() {
 
         const postButtons = document.querySelectorAll('.btn-posts');
         const todoButtons = document.querySelectorAll('.btn-todos');
+        const infobox = document.querySelector(".card-information");
+        const closeBtn = document.querySelector("#closeBtn");
 
         // Add eventlistener to all "Show Posts" buttons & fetch posts API
         postButtons.forEach(button => {
@@ -123,6 +134,9 @@ async function userData() {
                 // Get user's name from the clicked card
                 const userCard = button.closest('.card');
                 const name = userCard.querySelector("h2").innerText;
+
+                infobox.classList.add("show-info");
+                closeBtn.classList.remove("hidden");
 
 
                 try{
@@ -152,7 +166,10 @@ async function userData() {
                 const userId = button.dataset.userid; // Get user ID from button attribute. This needs to be inside each button function to get the correct user
                 // Get user's name from the clicked card
                 const userCard = button.closest('.card'); 
-                const name = userCard.querySelector("h2").innerText; 
+                const name = userCard.querySelector("h2").innerText;
+
+                infobox.classList.add("show-info");
+                closeBtn.classList.remove("hidden");
 
                 try{
                     const todosRes = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`);
@@ -179,3 +196,5 @@ async function userData() {
 }
 
 userData();
+
+

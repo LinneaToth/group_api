@@ -49,17 +49,15 @@ main {
 
 #closeBtn{
     display: none;
-   z-index: 100;
-   position: absolute;
-   top: var(--margin);
-   right: 5vw;
-
+    z-index: 100;
+    position: absolute;
+    top: var(--margin);
+    right: 5vw;
 }
 
 .hidden{
     display: none; 
 }
-
 
 
 /*USER CARDS*/
@@ -105,7 +103,6 @@ main {
     -ms-overflow-style: none; /* Works for IE & Edge */
     scrollbar-width: none; /* Works for Firefox */
 }
-
 
 .card-information::-webkit-scrollbar {
     display:none;
@@ -162,7 +159,6 @@ button:hover{
 }
 
 /*TO-DO*/
-
 .todo-item{
     display: grid;
     grid-template-columns: 3rem auto;
@@ -213,7 +209,6 @@ button:hover{
 }
 
 /* ---------------------------------Responsive Layout--------------------------------- */
-
 @media(max-width: 1150px){
 
     .card-container {

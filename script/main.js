@@ -47,7 +47,7 @@ async function addPosts(postArray, amtComments, name) {
         commentCard.classList.add("hidden", "comment-card");
         let comments = await getPostComments(post.id);
         comments = comments.slice(0, amtComments); //specifies the amount of comments shown
-        console.log(comments);
+
 
         const commentsBtn = document.createElement("button"); //Button toggling visibility of comments for each post
         commentsBtn.classList.add('btn-comments')
@@ -103,7 +103,6 @@ async function userData() {
         }
         const userData = await dataResponse.json();
 
-        console.log(userData);
 
         for (const user of userData){  // Loop through each user and add image, basic user info and two buttons (one for posts & one for todos)
             userContainer.innerHTML +=`
@@ -147,7 +146,6 @@ async function userData() {
                     }
                     const posts = await postRes.json();
 
-                    console.log('posts: ', posts);
 
                     addPosts(posts, 3, name); // Call posts function + 3 comments
                 }
@@ -178,8 +176,6 @@ async function userData() {
                         throw new Error('Could not fetch todos: ' + todosRes.status);
                     }
                     const todos = await todosRes.json();
-
-                    console.log('todos: ', todos);
 
                     addTodos(todos, name);   // Call todos function 
                 }
